@@ -5,19 +5,18 @@ layout: default
 
 # Module 2 – Firm Dynamism Indicators
 
-> These indicators measure **how dynamic and competitive** markets are over time, based on firm entries, exits, rank changes, and job flows.
-
-A dynamic market shows **high turnover at the top**, **frequent reshuffling**, and **strong job creation/destruction**, indicating innovation and competition.
+> These indicators measure **how dynamic and competitive** markets are over time, based on firm entries, exits, rank changes, and job flows.  
+> A dynamic market shows **high turnover at the top**, **frequent reshuffling**, and **strong job creation/destruction**, indicating innovation and competition.
 
 ---
 
 ## 1. Turnover at the Top
 
-**Definition.** Measures the probability that a firm in the **top 4** leaves the top group after $k$ years.
+**Definition.** Measures the probability that a firm in the **top 4** leaves the top group after _k_ years.
 
 $$
 \text{Turnover}_{jt} =
-\frac{\#\,\text{exiters}_{j,\,t\to t+k}}{\#\,\text{firms}_{j,t}^{\text{top 4}}}
+\frac{\text{\# exiters}_{j,\,t\to t+k}}{\text{\# firms}_{j,t}^{\text{top 4}}}
 $$
 
 Or equivalently,
@@ -25,14 +24,15 @@ Or equivalently,
 $$
 \text{Turnover}_{jt} =
 \Pr\!\Big(
-\text{Mkt Sh}_{i,j,t+k} < \text{Mkt Sh}^{\#4}_{j,t+k}
-\ \big|\ 
-\text{Mkt Sh}_{i,j,t} \ge \text{Mkt Sh}^{\#4}_{j,t}
+\text{Mkt Sh}_{i,j,t+k} < \text{Mkt Sh}^{\text{\#4}}_{j,t+k}
+\;\big|\;
+\text{Mkt Sh}_{i,j,t} \ge \text{Mkt Sh}^{\text{\#4}}_{j,t}
 \Big)
 $$
 
-**Interpretation:** High values → frequent leadership changes (dynamic market).  
-Low values → stable market (possibly less competition).
+**Interpretation:**  
+High values → frequent leadership changes (**dynamic market**).  
+Low values → stable market (**less competition**).
 
 ---
 
@@ -41,23 +41,23 @@ Low values → stable market (possibly less competition).
 **Definition.** Captures changes in firm rank ordering over time.
 
 $$
-\text{Reshuffling}_{jt} = 1 - \text{corr}\!\big(\text{Rank}_{j,t}, \text{Rank}_{j,t+k}\big),
-\qquad k \in \{3,5,8\}
+\text{Reshuffling}_{jt} = 1 - \text{corr}\!\big(\text{Rank}_{j,t},\,\text{Rank}_{j,t+k}\big),
+\quad k \in \{3,5,8\}
 $$
 
 **Interpretation:**  
-- High → ranks change often → dynamic market.  
-- Low → persistent ranking → rigid market.
+High → ranks change often → dynamic market.  
+Low → persistent ranking → rigid market.
 
 ---
 
 ## 3. Entry Rate
 
-**Definition.** Share of firms that **enter** a sector in $t$.
+**Definition.** Share of firms that **enter** a sector in _t_.
 
 $$
 \text{EntryRate}_{jt} =
-\frac{\#\,\text{entrants}_{jt}}{\#\,\text{producing firms}_{jt}}
+\frac{\text{\# entrants}_{jt}}{\text{\# producing firms}_{jt}}
 $$
 
 **Interpretation:**  
@@ -68,11 +68,11 @@ Low → stagnation or high barriers.
 
 ## 4. Exit Rate
 
-**Definition.** Share of firms that **exit** the market in $t$.
+**Definition.** Share of firms that **exit** the market in _t_.
 
 $$
 \text{ExitRate}_{jt} =
-\frac{\#\,\text{exiters}_{jt}}{\#\,\text{producing firms}_{jt}}
+\frac{\text{\# exiters}_{jt}}{\text{\# producing firms}_{jt}}
 $$
 
 **Interpretation:**  
@@ -83,13 +83,14 @@ Low → stability.
 
 ## 5. Establishment Size
 
-Average employment between $t$ and $t-1$ for each firm $i$:
+Average employment between _t_ and _t − 1_ for firm _i_:
 
 $$
-x_{it} = \frac{\text{employment}_{it} + \text{employment}_{i,t-1}}{2}
+x_{it} =
+\frac{\text{employment}_{it} + \text{employment}_{i,t-1}}{2}
 $$
 
-Sector-level or national aggregates can be computed as:
+Sector-level or national aggregates:
 
 $$
 X_t = \sum_{j\in J}\sum_{i\in j} x_{it}
@@ -102,16 +103,18 @@ $$
 **Definition.**
 
 $$
-g_{it} = \frac{\text{employment}_{it} - \text{employment}_{i,t-1}}{x_{it}}
+g_{it} =
+\frac{\text{employment}_{it} - \text{employment}_{i,t-1}}{x_{it}}
 $$
 
-Ranges between $[-2,+2]$;  
-$-2$ = exit (death), $+2$ = entry (birth).
+Ranges ∈ [−2,+2]; −2 = exit, +2 = entry.  
 
-Aggregate to sector $j$:
+Aggregate to sector _j_:
 
 $$
-g_{jt} = \sum_{i\in j} \frac{x_{it}}{X_{jt}}\, g_{it}
+g_{jt} =
+\sum_{i\in j}
+\frac{x_{it}}{X_{jt}}\,g_{it}
 $$
 
 ---
@@ -119,8 +122,9 @@ $$
 ## 7. (Gross) Job Creation Rate
 
 $$
-POS_{jt} = \sum_{i\in j,\, g_{it}>0} 
-\frac{x_{it}}{X_{jt}}\, g_{it}
+POS_{jt} =
+\sum_{i\in j,\,g_{it}>0}
+\frac{x_{it}}{X_{jt}}\,g_{it}
 $$
 
 Decompose:
@@ -129,16 +133,17 @@ $$
 POS_{jt} = POS_{\text{Entry},jt} + POS_{\text{Cont},jt}
 $$
 
-- **Entry**: new firms ($g_{it}=2$)  
-- **Continuing**: existing firms ($0<g_{it}<2$)
+- **Entry:** new firms (\(g_{it}=2\))  
+- **Continuing:** existing firms (\(0<g_{it}<2\))
 
 ---
 
 ## 8. (Gross) Job Destruction Rate
 
 $$
-NEG_{jt} = \sum_{i\in j,\, g_{it}<0} 
-\frac{x_{it}}{X_{jt}}\, |g_{it}|
+NEG_{jt} =
+\sum_{i\in j,\,g_{it}<0}
+\frac{x_{it}}{X_{jt}}\,|g_{it}|
 $$
 
 Decompose:
@@ -147,8 +152,8 @@ $$
 NEG_{jt} = NEG_{\text{Exit},jt} + NEG_{\text{Cont},jt}
 $$
 
-- **Exit**: $g_{it}=-2$ (firm closure)  
-- **Continuing**: $-2<g_{it}<0$
+- **Exit:** \(g_{it}=-2\) (firm closure)  
+- **Continuing:** \(-2<g_{it}<0\)
 
 ---
 
@@ -161,19 +166,21 @@ $$
 **Decomposition:**
 
 $$
-SUM_{jt} = (POS_{\text{Cont}} + NEG_{\text{Cont}}) + (POS_{\text{Entry}} + NEG_{\text{Exit}})
+SUM_{jt} =
+(POS_{\text{Cont}} + NEG_{\text{Cont}}) +
+(POS_{\text{Entry}} + NEG_{\text{Exit}})
 $$
 
 Upper bound (total reallocation volume):
 
 $$
-X_{jt}\, SUM_{jt} = X_{jt}\,(POS_{jt} + NEG_{jt})
+X_{jt}\,SUM_{jt} = X_{jt}(POS_{jt}+NEG_{jt})
 $$
 
 Lower bound (workers actually switching jobs):
 
 $$
-X_{jt}\, MAX_{jt} = X_{jt}\,\max\!\big(POS_{jt},\,NEG_{jt}\big)
+X_{jt}\,MAX_{jt} = X_{jt}\,\max(POS_{jt},NEG_{jt})
 $$
 
 ---
@@ -184,35 +191,33 @@ $$
 NET_{jt} = POS_{jt} - NEG_{jt}
 $$
 
-Positive → job expansion;  
-Negative → contraction.
+Positive → job expansion; Negative → contraction.
 
 ---
 
 ## 11. Excess Job Reallocation Rate
 
 $$
-EXC_{jt} = SUM_{jt} - \big|\,NET_{jt}\,\big|
+EXC_{jt} = SUM_{jt} - |\;NET_{jt}\;|
 $$
 
-**Meaning:** Employment churn beyond what’s needed to accommodate net growth.
+**Meaning:** Employment churn beyond what’s needed for net growth.
 
 ---
 
 ## 12. Persistence of Job Creation / Destruction
 
-**Fraction of jobs created (or destroyed) in $t$ that persist in $t+k$:**
+**Fraction of jobs created (or destroyed) in _t_ that persist in _t + k_:**
 
 $$
 \text{FPO}_{t1} =
-\frac{\sum_{i:\ \text{NewJobs}_{it}>0} \text{NewJobs}_{it}}{POS_t},
+\frac{\sum_{i:\text{NewJobs}_{it}>0}\text{NewJobs}_{it}}{POS_t},
 \qquad
 \text{FNE}_{t1} =
-\frac{\sum_{i:\ \text{NewJobs}_{it}<0} \big|\text{NewJobs}_{it}\big|}{NEG_t}
+\frac{\sum_{i:\text{NewJobs}_{it}<0}|\text{NewJobs}_{it}|}{NEG_t}
 $$
 
-where  
-$\text{NewJobs}_{it} = \text{employment}_{it} - \text{employment}_{i,t-1}$
+where \(\text{NewJobs}_{it} = \text{employment}_{it} - \text{employment}_{i,t-1}\).
 
 ---
 
@@ -221,25 +226,25 @@ $\text{NewJobs}_{it} = \text{employment}_{it} - \text{employment}_{i,t-1}$
 ### Between-sector component
 
 $$
-\sum_{j=1}^{J} 
-\Big|
+\sum_{j=1}^{J}
+\left|
 \text{Net Emp Change}_j
-\Big|
+\right|
 -
-\Big|
-\sum_{j=1}^{J} 
+\left|
+\sum_{j=1}^{J}
 \text{Net Emp Change}_j
-\Big|
+\right|
 $$
 
 ### Within-sector component
 
 $$
-\sum_{j=1}^{J} 
+\sum_{j=1}^{J}
 \Big(
 \text{Job Reallocation}_j
 -
-\big|\text{Net Emp Change}_j\big|
+|\text{Net Emp Change}_j|
 \Big)
 $$
 
@@ -249,12 +254,12 @@ $$
 
 | Indicator | Meaning | High Value → | Low Value → |
 |------------|----------|---------------|--------------|
-| Turnover at the Top | Leader changes | Dynamic market | Stable top firms |
-| Reshuffling | Rank changes | Competitive | Persistent hierarchy |
-| Entry/Exit Rate | Firm flows | Market fluidity | Barriers/high stability |
-| Job Creation/Destruction | Employment flows | Reallocation | Rigid structure |
-| Net Employment Growth | Expansion vs shrinkage | Growing sector | Contraction |
-| Excess Reallocation | Labor churn | Adjustment/Innovation | Static employment |
-| Persistence | Longevity of jobs | Stable firms | Short-term churn |
+| **Turnover at the Top** | Leader changes | Dynamic market | Stable top firms |
+| **Reshuffling** | Rank changes | Competitive | Persistent hierarchy |
+| **Entry/Exit Rate** | Firm flows | Market fluidity | Barriers / stability |
+| **Job Creation/Destruction** | Employment flows | Reallocation | Rigid structure |
+| **Net Employment Growth** | Expansion vs shrinkage | Growing sector | Contraction |
+| **Excess Reallocation** | Labor churn | Adjustment / Innovation | Static employment |
+| **Persistence** | Longevity of jobs | Stable firms | Short-term churn |
 
 ---
