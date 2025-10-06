@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Page Title
 ---
 
 # Market Concentration Indicators
