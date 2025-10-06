@@ -181,3 +181,81 @@ Assume **one fully flexible input** \(j\) (no adjustment costs, competitive inpu
 - Document **measurement choices**: COGS composition, wage bill definition, capital user costs, etc.
 
 ---
+
+
+
+## 5.4.6 Cost Shares Require No Monopsony Power
+
+Abstracting from capital adjustment costs (\( \Phi = 0 \)), the system of first-order conditions becomes:
+
+$$
+\begin{aligned}
+P_{it} Q_{it} &= r^K_{it} K_{it} \frac{\mu_{it}}{\theta^k_{it}} \\
+\nu_{it} W_{it} L_{it} &= \theta^l_{it} \frac{P_{it} Q_{it}}{\mu_{it}} \\
+P^M_{it} M_{it} &= \theta^m_{it} \frac{P_{it} Q_{it}}{\mu_{it}}
+\end{aligned}
+$$
+
+Simplified, we can express the system as:
+
+$$
+\begin{aligned}
+r^K_{it} K_{it} &= \theta^k_{it} \, \frac{P_{it} Q_{it}}{\mu_{it}} \\
+\nu_{it} W_{it} L_{it} &= \theta^l_{it} \, \frac{P_{it} Q_{it}}{\mu_{it}} \\
+P^M_{it} M_{it} &= \theta^m_{it} \, \frac{P_{it} Q_{it}}{\mu_{it}}
+\end{aligned}
+\tag{61}
+$$
+
+The goal is to recover the elasticities \( \theta^j_{it}, \; j \in \{k, l, m\} \) from the system above.  
+We can write:
+
+$$
+\begin{aligned}
+\theta^k_{it} &= \frac{r^K_{it} K_{it}}{r^K_{it} K_{it} + \nu_{it} W_{it} L_{it} + P^M_{it} M_{it}} \times RTS_{it} \\
+\theta^l_{it} &= \frac{\nu_{it} W_{it} L_{it}}{r^K_{it} K_{it} + \nu_{it} W_{it} L_{it} + P^M_{it} M_{it}} \times RTS_{it} \\
+\theta^m_{it} &= \frac{P^M_{it} M_{it}}{r^K_{it} K_{it} + \nu_{it} W_{it} L_{it} + P^M_{it} M_{it}} \times RTS_{it}
+\end{aligned}
+\tag{62}
+$$
+
+However, a **circularity problem** arises: we cannot know the markdown \( \nu_{it} \) before computing \( \theta^j_{it} \),  
+but computing \( \theta^j_{it} \) itself requires knowing \( \nu_{it} \).
+
+**Solution:**  
+When \( \nu_{it} = 1 \) (no monopsony power), the circularity disappears and we can safely use **cost shares**  
+to infer output elasticities, assuming a value for \( RTS_{it} \) (typically from Section 5.4.3).
+
+---
+
+## 5.4.7 Price-Cost Margin (PCM)
+
+The **Price–Cost Margin (PCM)** is a straightforward accountability indicator used to evaluate firm profitability and efficiency.  
+Unlike markup estimations, it does **not require** assumptions on market structure or cost minimization.
+
+**Formula:**
+
+$$
+PCM_{ijt} =
+\frac{\text{Value Added}_{ijt} - \text{Labor Cost}_{ijt}}{\text{Total Revenue}_{ijt}}
+$$
+
+**Interpretation:**
+- High \( PCM \): firms retain a larger share of revenue as surplus — possibly higher profitability or market power.  
+- Low or negative \( PCM \): high labor intensity, cost pressures, or competitive pricing.
+
+---
+
+### Summary
+
+| Indicator | Symbol / Formula | Key Insight |
+|------------|------------------|--------------|
+| **Cost Share Elasticities** | \( \theta^j_{it} = \frac{p^j_{it} x^j_{it}}{\sum_j p^j_{it} x^j_{it}} \times RTS \) | Use only if \( \nu=1 \) (no monopsony). |
+| **Price-Cost Margin** | \( PCM = \frac{VA - LC}{TR} \) | Simple profitability ratio, data-driven. |
+
+---
+
+**Practical Note:**  
+The PCM provides a good **benchmark indicator** for firm performance, complementing markup-based measures that rely on stronger behavioral assumptions.
+
+---
