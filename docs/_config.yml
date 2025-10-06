@@ -1,10 +1,16 @@
-title: "Competition for Development Measuring Market Power in LAC"
-description: "This document offers a comprehensive explanation of the curated process for all indicators used in the Development in the Americas 2025 report on Competition for Development"
+title: "Competition for Development: Measuring Market Power in LAC"
+description: "Comprehensive explanation of the curated process for all indicators used in the Development in the Americas 2025 report on Competition for Development."
+
+# Markdown + Math
 markdown: kramdown
 kramdown:
   math_engine: mathjax
   math_engine_opts:
     preview: "TeX"
-remote_theme: pages-themes/minimal@v0.2.0
+
+# Theme (GitHub Pages–compatible)
+remote_theme: "pages-themes/minimal@v0.2.0"
+
+# GitHub Pages–allowed plugins
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
