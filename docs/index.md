@@ -130,7 +130,6 @@ $$
 $$
 
 **Interpretation:** Higher value → broader competitive base; lower → dominance of large firms.
-
 ---
 
 ## 8) Dominance Index (DI)
