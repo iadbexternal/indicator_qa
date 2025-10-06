@@ -9,14 +9,13 @@ layout: default
 > A dynamic market shows **high turnover at the top**, **frequent reshuffling**, and **strong job creation/destruction**, indicating innovation and competition.
 
 ---
-
 ## 1. Turnover at the Top
 
 **Definition.** Measures the probability that a firm in the **top 4** leaves the top group after _k_ years.
 
 $$
 \text{Turnover}_{jt} =
-\frac{\text{\# exiters}_{j,\,t\to t+k}}{\text{\# firms}_{j,t}^{\text{top 4}}}
+\frac{N_{\text{exiters},\,j,\,t\to t+k}}{N_{\text{firms},\,j,t}^{\text{top 4}}}
 $$
 
 Or equivalently,
@@ -24,9 +23,9 @@ Or equivalently,
 $$
 \text{Turnover}_{jt} =
 \Pr\!\Big(
-\text{Mkt Sh}_{i,j,t+k} < \text{Mkt Sh}^{\text{\#4}}_{j,t+k}
+\text{MktSh}_{i,j,t+k} < \text{MktSh}^{(4)}_{j,t+k}
 \;\big|\;
-\text{Mkt Sh}_{i,j,t} \ge \text{Mkt Sh}^{\text{\#4}}_{j,t}
+\text{MktSh}_{i,j,t} \ge \text{MktSh}^{(4)}_{j,t}
 \Big)
 $$
 
@@ -36,30 +35,25 @@ Low values → stable market (**less competition**).
 
 ---
 
-## 2. Market Share Reshuffling (of Incumbents)
-
-**Definition.** Captures changes in firm rank ordering over time.
-
-$$
-\text{Reshuffling}_{jt} = 1 - \text{corr}\!\big(\text{Rank}_{j,t},\,\text{Rank}_{j,t+k}\big),
-\quad k \in \{3,5,8\}
-$$
-
-**Interpretation:**  
-High → ranks change often → dynamic market.  
-Low → persistent ranking → rigid market.
-
----
-
 ## 3. Entry Rate
 
 **Definition.** Share of firms that **enter** a sector in _t_.
 
 $$
 \text{EntryRate}_{jt} =
-\frac{\text{\# entrants}_{jt}}{\text{\# producing firms}_{jt}}
+\frac{N_{\text{entrants},\,jt}}{N_{\text{producing firms},\,jt}}
 $$
 
+---
+
+## 4. Exit Rate
+
+**Definition.** Share of firms that **exit** the market in _t_.
+
+$$
+\text{ExitRate}_{jt} =
+\frac{N_{\text{exiters},\,jt}}{N_{\text{producing firms},\,jt}}
+$$
 **Interpretation:**  
 High → low barriers and strong business creation.  
 Low → stagnation or high barriers.
