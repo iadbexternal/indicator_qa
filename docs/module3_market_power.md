@@ -250,12 +250,12 @@ $$
 
 | Indicator | Symbol / Formula | Key Insight |
 |------------|------------------|--------------|
-| **Cost Share Elasticities** | \( \theta^j_{it} = \frac{p^j_{it} x^j_{it}}{\sum_j p^j_{it} x^j_{it}} \times RTS \) | Use only if \( \nu=1 \) (no monopsony). |
-| **Price-Cost Margin** | \( PCM = \frac{VA - LC}{TR} \) | Simple profitability ratio, data-driven. |
+| **Cost Share Elasticities** | $$\theta^j_{it} = \frac{p^j_{it} x^j_{it}}{\sum_j p^j_{it} x^j_{it}} \times RTS$$ | Use only if $$\nu = 1$$ (no monopsony). |
+| **Price-Cost Margin** | $$PCM = \frac{VA - LC}{TR}$$ | Simple profitability ratio, data-driven. |
 
 ---
 
-**Practical Note:**  
+**Practical Note**  
 The PCM provides a good **benchmark indicator** for firm performance, complementing markup-based measures that rely on stronger behavioral assumptions.
 
 ---
