@@ -214,31 +214,28 @@ $$
 where \(\text{NewJobs}_{it} = \text{employment}_{it} - \text{employment}_{i,t-1}\).
 
 ---
-
 ## 13. Decomposition of Excess Job Reallocation
 
 ### Between-sector component
 
 $$
-\sum_{j=1}^{J}
-\left|
-\text{Net Emp Change}_j
-\right|
--
-\left|
-\sum_{j=1}^{J}
-\text{Net Emp Change}_j
+\sum_{j=1}^{J} 
+\left| \text{NetEmpChange}_{j} \right|
+\;-\;
+\left| 
+\sum_{j=1}^{J} 
+\text{NetEmpChange}_{j}
 \right|
 $$
 
 ### Within-sector component
 
 $$
-\sum_{j=1}^{J}
+\sum_{j=1}^{J} 
 \Big(
-\text{Job Reallocation}_j
--
-|\text{Net Emp Change}_j|
+\text{JobReallocation}_{j}
+\;-\;
+\left| \text{NetEmpChange}_{j} \right|
 \Big)
 $$
 
